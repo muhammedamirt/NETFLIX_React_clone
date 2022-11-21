@@ -1,15 +1,21 @@
-.netLogo{
-width: 120px;
-margin-left: 20px;
-margin-top: 20px;
+.navbar{
+    background-color: #111;
+    width: 100%;
+    color: white;
+    
 }
-.navbar-nav{
-    margin-top: 20px;
-    margin-left: 15px;
-    font-weight: 700;
+.navbar-brand{
+    padding-left:0.5rem ;
+    width: 7rem;
 }
-.avathar-logo{
-    width: 20px;
-    margin-right: 20px;
-    margin-right: auto;
+.Avatar{
+    padding-right:2rem ;
+    width: 4rem; 
+}
+.nav-link{
+    padding-left:5rem ;
+
+}
+#home{
+    padding-left:2rem ;
 }
