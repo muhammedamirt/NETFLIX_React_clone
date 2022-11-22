@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { imageURL,API_KEY } from '../../constants/constant'
+import { imageURL, API_KEY } from '../../constants/constant'
 import Youtube from 'react-youtube'
 import axios from '../../Axios'
 
@@ -7,7 +7,7 @@ import './MovieRow.css'
 
 function MovieRow(props) {
     const [rowPosters, setRowPosters] = useState([])
-    const [movieUrlId,setMovieUrlId] = useState("")   
+    const [movieUrlId, setMovieUrlId] = useState("")
     useEffect(() => {
         axios.get(props.url).then((response) => {
             setRowPosters(response.data.results)
@@ -15,35 +15,33 @@ function MovieRow(props) {
             console.log('error');
         })
     }, [])
-    const showTrailer = (movieId) =>{
-        console.log(movieId);
-        axios.get(`/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`).then((response)=>{
-            console.log(response.data.results[0]);
+    const showTrailer = (movieId) => {
+        axios.get(`/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`).then((response) => {
             if (response.data.results.length !== 0) {
                 setMovieUrlId(response.data.results[0])
-            }else{
+            } else {
                 console.log('no vedio');
             }
-            
-    })
+
+        })
     }
     const opts = {
         height: '350',
         width: '100%',
         playerVars: {
-          // https://developers.google.com/youtube/player_parameters
-          autoplay: 1,
+            autoplay: 1,
         }
+
     }
     return (
         <div className='row'>
             <h2>{props.title}</h2>
             <div className='posters'>
-                {rowPosters.map((obj)=>
-                <img onClick={()=>showTrailer(obj.id)} className={props.isSmall ?'smallposter':'poster'} src={`${imageURL+obj.backdrop_path}`} alt="posters" />
+                {rowPosters.map((obj) =>
+                    <img onClick={() => showTrailer(obj.id)} className={props.isSmall ? 'smallposter' : 'poster'} src={`${imageURL + obj.backdrop_path}`} alt="posters" />
                 )}
             </div>
-        {movieUrlId &&  <Youtube videoId={movieUrlId ? movieUrlId.key : ""} opts={opts}  />}
+            {movieUrlId && <Youtube videoId={movieUrlId ? movieUrlId.key : ""} opts={opts} />}
         </div>
     )
 }
