@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { API_KEY ,imageURL} from '../../constants/constant'
 import axios from '../../Axios'
 import './banner.css'
-function banner() {
+function Banner() {
     const [movie, setMovie] = useState()
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`).then((response) => {
             const movie_num = Math.floor(Math.random() * response.data.results.length);
             setMovie(response.data.results[movie_num])
-            console.log(response.data.results[movie_num]);
         })
     }, [])
     return (
@@ -29,4 +28,4 @@ function banner() {
     )
 }
 
-export default banner
+export default Banner

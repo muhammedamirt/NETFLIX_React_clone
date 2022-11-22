@@ -19,16 +19,27 @@
 display: none;
 }
 .poster{
+    cursor: pointer;
     max-height: 200px;
     width: 50%;
+  
 }
 
 .smallposter{
+    cursor: pointer;
     max-height: 150px;
 }
 
+
+.poster:hover{
+    transform: scale(1.1);
+    transition:  1s;
+}
+
+
+
 .smallposter:hover{
-    transform: scale(1,1);
+    transform: scale(1.1,1.1);
     transition:  1s;
 }
 .poster:hover{

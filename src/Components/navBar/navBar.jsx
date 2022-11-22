@@ -14,24 +14,24 @@ function navBar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a style={{ color: 'white' }} id="home" className="nav-link active" aria-current="page" >Home</a>
+                            <a href='/#' style={{ color: 'white' }} id="home" className="nav-link active" aria-current="page" >Home</a>
                         </li>
                         <li className="nav-item">
-                            <a style={{ color: 'white' }} className="nav-link" >Tv shows</a>
+                            <a href='/#' style={{ color: 'white' }} className="nav-link" >Tv shows</a>
                         </li>
 
                         <li className="nav-item">
-                            <a style={{ color: 'white' }} className="nav-link" >Movies</a>
+                            <a href='/#' style={{ color: 'white' }} className="nav-link" >Movies</a>
                         </li>
                         <li className="nav-item">
-                            <a style={{ color: 'white' }} className="nav-link" >Latest</a>
+                            <a href='/#' style={{ color: 'white' }} className="nav-link" >Latest</a>
                         </li>
                         <li className="nav-item">
-                            <a style={{ color: 'white' }} className="nav-link" >MY List</a>
+                            <a href='/#' style={{ color: 'white' }} className="nav-link" >MY List</a>
                         </li>
                     </ul>
                     
-                    <img className='Avatar' src='https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png'/>
+                    <img className='Avatar' src='https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png' alt='avathar'/>
                 </div>
             </div>
         </nav>

@@ -1,0 +1,9 @@
+.footerStyle{
+    background-color: rgb(30, 28, 28);
+}
+a{
+    text-decoration: none;
+}
+.list-unstyled:hover{
+    color: red;
+}
